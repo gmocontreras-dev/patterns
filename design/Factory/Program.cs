@@ -1,5 +1,6 @@
 ﻿using System;
 using Patrones.Factory.Entities.Delivery;
+using Patrones.Factory.Implementation.Database;
 using Patrones.Factory.Implementation.Delivery;
 using Patrones.Factory.Interfaces;
 
@@ -9,8 +10,13 @@ namespace Patrones.Factory
     {
         static void Main(string[] args)
         {
-            RunDelivery();
-            Console.WriteLine("Hello World!");
+            RunDatabase();
+            Console.ReadKey();
+        }
+        private static void RunDatabase()
+        {
+           IDatabaseConnection databaseConnection = FactoryDataBase.Instance.GetConnection(Enums.DatabaseEnum.SqlServer);
+            Console.WriteLine($"{databaseConnection.GetStatus()}");
         }
         private static void RunDelivery(){
             Product product = new Product{

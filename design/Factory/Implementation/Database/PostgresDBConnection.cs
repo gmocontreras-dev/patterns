@@ -25,5 +25,9 @@ namespace Patrones.Factory.Implementation.Database
         {
             throw new System.NotImplementedException();
         }
+        public string GetStatus()
+        {
+            return "PostgresDBConnection Status";
+        }
     }
 }

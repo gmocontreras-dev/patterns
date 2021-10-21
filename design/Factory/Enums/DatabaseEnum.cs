@@ -5,6 +5,6 @@ namespace Patrones.Factory.Enums
         SqlServer,
         Oracle,
         Postgres,
-        MySQL
+        MySql
     }
 }

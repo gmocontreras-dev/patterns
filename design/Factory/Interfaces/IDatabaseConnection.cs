@@ -1,5 +1,5 @@
-using System.Collections.Generic;
 using Patrones.Factory.Entities.Database;
+using System.Collections.Generic;
 
 namespace Patrones.Factory.Interfaces
 {
@@ -9,6 +9,7 @@ namespace Patrones.Factory.Interfaces
          public List<Table> GetTables();
          public List<Column> GetColumns(string tableName);
          public bool Disconnect();
+         public string GetStatus();
 
     }
 }

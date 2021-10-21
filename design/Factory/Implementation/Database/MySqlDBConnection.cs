@@ -21,6 +21,11 @@ namespace Patrones.Factory.Implementation.Database
             throw new System.NotImplementedException();
         }
 
+        public string GetStatus()
+        {
+            return "MySqlDBConnection Status";
+        }
+
         public List<Table> GetTables()
         {
             throw new System.NotImplementedException();

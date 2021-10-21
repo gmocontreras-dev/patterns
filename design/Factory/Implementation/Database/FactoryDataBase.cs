@@ -1,4 +1,6 @@
 using Patrones.Factory.Enums;
+using Patrones.Factory.Interfaces;
+using System;
 
 namespace Patrones.Factory.Implementation.Database
 {
@@ -14,8 +16,11 @@ namespace Patrones.Factory.Implementation.Database
                 return lazy.Value;
             }
         }
-        public IDatabaseConnection GetDatabase(DatabaseEnum database){
-            
+        public IDatabaseConnection GetConnection(DatabaseEnum database){
+          
+            var databaseConnection = (IDatabaseConnection)Activator.CreateInstance
+              (Type.GetType($"Patrones.Factory.Implementation.Database.{Enum.GetName(typeof(DatabaseEnum), database)}DBConnection"));
+            return databaseConnection;
         }
     }
 }
